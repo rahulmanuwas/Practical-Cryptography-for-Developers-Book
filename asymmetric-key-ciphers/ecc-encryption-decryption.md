@@ -14,7 +14,7 @@ This is how most **hybrid encryption schemes** works \(the encryption process\):
 
 This is how most **hybrid encryption schemes** works \(the decryption process\):
 
-![](../.gitbook/assets/hybrid-decryption%20%281%29.png)
+![](../.gitbook/assets/hybrid-decryption-1.png)
 
 Let's get into details how to design and implement an **ECC-based hybrid encryption scheme**.
 

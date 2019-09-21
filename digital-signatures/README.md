@@ -14,7 +14,7 @@
 
 **Digital signature** schemes typically use a **public-key cryptosystem** \(such as RSA or ECC\) and use a **public / private key pairs**. A message is signed by a private key and the signature is verified by the corresponding public key:
 
-![](../.gitbook/assets/public-key-cryptography-sign-verify.png)
+![](../.gitbook/assets/public-key-cryptography-sign-verify%20%281%29.png)
 
 Messages are **signed** by the sender using a **private key** \(signing key\). Typically the input message is **hashed** and then the **signature** is calculated by the signing algorithm. Most signature algorithms perform some calculation with the message hash + the signing key in a way that the result cannot be calculated without the signing key. The result from message signing is the **digital signature** \(one or more integers\):
 

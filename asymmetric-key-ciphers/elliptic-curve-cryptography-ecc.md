@@ -40,7 +40,7 @@ In mathematics [**elliptic curves**](http://mathworld.wolfram.com/EllipticCurve.
 
 Cryptography uses **elliptic curves** in a simplified form \(Weierstras form\), which is defined as:
 
-* y2 = x3 + _**a**_x + _**b**_
+* y2 = x3 + _**a**\_x +_ **b**\_
 
 For example, the [NIST curve `secp256k1`](https://en.bitcoin.it/wiki/Secp256k1) \(used in Bitcoin\) is based on an elliptic curve in the form:
 
@@ -58,7 +58,7 @@ To learn more about the equations of the elliptic curves and how they look like,
 
 The **elliptic curve cryptography \(ECC\)** uses **elliptic curves over the** [**finite field**](https://en.wikipedia.org/wiki/Finite_field) **𝔽p** \(where _**p**_ is prime and _**p**_ &gt; 3\) or **𝔽2**_**m**_ \(where the fields size _**p**_ = 2_**m**_\). This means that the field is a **square matrix** of size _**p**_ x _**p**_ and the points on the curve are limited to **integer coordinates** within the field only. All algebraic operations within the field \(like point addition and multiplication\) result in another point within the field. The elliptic curve equation over the finite field **𝔽p** takes the following modular form:
 
-* y2 ≡ x3 + _**a**_x + _**b**_ \(mod _**p**_\)
+* y2 ≡ x3 + _**a**\_x +_ **b** _\(mod_ **p**\_\)
 
 Respectively, the "Bitcoin curve" `secp256k1` takes the form:
 
@@ -69,7 +69,7 @@ Unlike **RSA**, which uses for its key space the **integers** in the range \[0..
 An **elliptic curve over the finite field** **𝔽p** consists of:
 
 * a set of integer coordinates {_**x**_, _**y**_}, such that **0** ≤ _**x**_, _**y**_ &lt; _**p**_
-* staying on the elliptic curve: _**y**_2 ≡ x3 + _**a**_x + _**b**_ \(mod **p**\)
+* staying on the elliptic curve: _**y**\_2 ≡ x3 +_ **a**_x +_ **b**\_ \(mod **p**\)
 
 **Example** of elliptic curve over the finite field **𝔽17**:
 
@@ -178,7 +178,7 @@ Consequently, in ECC we have:
 * **k** == **private key** \(integer\)
 * **P** == **public key** \(point\)
 
-It is **very fast** to calculate **P** = **k** \* **G**, using the well-known [ECC multiplication algorithms](https://en.wikipedia.org/wiki/Elliptic_curve_point_multiplication) in time _log_2\(_**k**_\), e.g. the "[double-and-add algorithm](https://en.wikipedia.org/wiki/Elliptic_curve_point_multiplication#Double-and-add)". For 256-bit curves, it will take just a few hundreds simple EC operations.
+It is **very fast** to calculate **P** = **k** \* **G**, using the well-known [ECC multiplication algorithms](https://en.wikipedia.org/wiki/Elliptic_curve_point_multiplication) in time _log\_2\(_**k**\_\), e.g. the "[double-and-add algorithm](https://en.wikipedia.org/wiki/Elliptic_curve_point_multiplication#Double-and-add)". For 256-bit curves, it will take just a few hundreds simple EC operations.
 
 It is **extremely slow** \(considered infeasible for large **k**\) to calculate **k** = **P** / **G**.
 
@@ -508,24 +508,24 @@ The public key is compressed and encoded in the standard format \(encode the **y
 Elliptic curves in the elliptic curve cryptography \(ECC\) may be presented in several **forms** \(representations\), which are proven to be birationally equivalent \(isomorphic\):
 
 * **Weierstrass form** of elliptic curve:
-  * y2 = x3 + _**a**_x + _**b**_
+  * y2 = x3 + _**a**\_x +_ **b**\_
   * Example Weierstrass curve used in ECC is `secp256k1`, which has the form y2 = x3 + _**7**_
 * **Montgomery form** of elliptic curve:
-  * _**B**_y2 = x3 + _**A**_x2 + x
-  * Example Montgomery curve used in ECC is `Curve25519`, which has the form y2 = x3 + _**486662**_x2 + x
+  * _**B**\_y2 = x3 +_ **A**\_x2 + x
+  * Example Montgomery curve used in ECC is `Curve25519`, which has the form y2 = x3 + \_**486662**\_x2 + x
 * **Edwards form** of elliptic curve:
-  * x2 + y2 = 1 + _**d**_x2y2
-  * Example Edwards curve used in ECC is `Curve448`, which has the form x2 + y2 = 1 - _**39081**_x2y2
+  * x2 + y2 = 1 + \_**d**\_x2y2
+  * Example Edwards curve used in ECC is `Curve448`, which has the form x2 + y2 = 1 - \_**39081**\_x2y2
 
 For performance reasons elliptic curve cryptography \(ECC\) sometimes uses [**Edwards curves**](https://en.wikipedia.org/wiki/Edwards_curve), which are elliptic curves in the following form:
 
-* x2 + y2 = 1 + _**d**_x2y2
+* x2 + y2 = 1 + \_**d**\_x2y2
 
-For example, if _**d**_ = 300, the Edwards curve x2 + y2 = 1 + _**300**_x2y2 looks like this:
+For example, if _**d**_ = 300, the Edwards curve x2 + y2 = 1 + \_**300**\_x2y2 looks like this:
 
 ![](../.gitbook/assets/edwards-curve.png)
 
-Every **Edwards curve** is birationally equivalent to an **elliptic curve in Weierstrass form** \(y2 = x3 + _**a**_x + _**b**_\) and thus has the same properties like the classical elliptic curves.
+Every **Edwards curve** is birationally equivalent to an **elliptic curve in Weierstrass form** \(y2 = x3 + _**a**\_x +_ **b**\_\) and thus has the same properties like the classical elliptic curves.
 
 **Edwards curves over a finite prime field 𝔽p** \(where **p** is large prime number\) provide fast integer to EC point multiplication, which has similar cryptographic properties like the classical elliptic curves, and the **ECDLP** problem has the same computational difficulty, suitable for cryptographic purposes.
 
@@ -537,19 +537,19 @@ With carefully selected curve parameters, the **Edwards curves over finite field
 
 For example, the [`Curve25519`](https://en.wikipedia.org/wiki/Curve25519) is the **Edwards curve**, defined by the following elliptic curve equation in [**Montgomery form**](https://en.wikipedia.org/wiki/Montgomery_curve):
 
-* y2 = x3 + _**486662**_x2 + x
+* y2 = x3 + \_**486662**\_x2 + x
 
 over the finite prime field **𝔽p**, where _**p**_ = 2255 - 19 \(the curve is 255-bit\).
 
 In fact, the above equation does not match directly the Edwards curve equation, but it is proven to be birationally equivalent to the following **twisted Edwards curve** \(known as **edwards25519**\):
 
-* -x2 + y2 = 1 + _**37095705934669439343138083508754565189542113879843219016388785533085940283555**_x2y2
+* -x2 + y2 = 1 + \_**37095705934669439343138083508754565189542113879843219016388785533085940283555**\_x2y2
 
 The elliptic curve **Curve25519** consists of all points {**x**, **y**} with integer coordinates, defined by the modular equation:
 
-* y2 ≡ x3 + _**486662**_x2 + x \(mod _**2255 - 19**_\)
+* y2 ≡ x3 + _**486662**\_x2 + x \(mod_ **2255 - 19**\_\)
 
-The above equation has its equivalent in the classical **Weierstrass form** for the elliptic curves \(y2 = x3 + _**a**_x + _**b**_\), but the above form is designed especially for speed optimizations.
+The above equation has its equivalent in the classical **Weierstrass form** for the elliptic curves \(y2 = x3 + _**a**\_x +_ **b**\_\), but the above form is designed especially for speed optimizations.
 
 The **Curve25519** is carefully engineered, by a team of cryptographers, led by Daniel Bernstein, at several levels of design and implementation to achieve **very high speeds** without compromising security.
 
@@ -561,9 +561,9 @@ Based on the **Curve25519** an **ECDH function** is derived, called [**X25519**]
 
 The [`Curve448`](https://en.wikipedia.org/wiki/Curve448) \(**Curve448-Goldilocks**\) is an untwisted **Edwards curve**, defined by the equation:
 
-* x2 + y2 = 1 - _**39081**_x2y2
+* x2 + y2 = 1 - \_**39081**\_x2y2
 
-over the finite prime field **𝔽p**, where _**p**_ = 2448 - 2224 - 1. It has **order** of **n** = 2446 - 0x8335dc163bb124b65129c96fde933d8d723a70aadc873d6d54a7bb0d and **cofactor** **h** = 4. Like any other Edwards curve, the **Curve448** has equivalent in the **Weierstrass form** \(y2 = x3 + _**a**_x + _**b**_\), but the above Edwards form provides significant optimizations in the EC point calculations and improved performance.
+over the finite prime field **𝔽p**, where _**p**_ = 2448 - 2224 - 1. It has **order** of **n** = 2446 - 0x8335dc163bb124b65129c96fde933d8d723a70aadc873d6d54a7bb0d and **cofactor** **h** = 4. Like any other Edwards curve, the **Curve448** has equivalent in the **Weierstrass form** \(y2 = x3 + _**a**\_x +_ **b**\_\), but the above Edwards form provides significant optimizations in the EC point calculations and improved performance.
 
 The **Curve448** provides **~ 224-bit security** level \(more precisely [**222.8-bits**](http://safecurves.cr.yp.to/rho.html)\). The **private keys** for the Curve448 are 446 bits and are typically encoded as **448-bit integers** \(56 bytes, 112 hex digits\). The **public keys** are also encoded as **448-bit integers**.
 
