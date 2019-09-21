@@ -146,7 +146,7 @@ Now, let's **decrypt** the encrypted message back to its original value:
 The RSA calculations work correctly. This is because the key-pair meets the RSA property:
 
 * \(_**me**_\)_**d**_ ≡ _**m**_ \(mod _**n**_\) for all _**m**_ in the range \[0..._**n**_\)
-* \(_**m**_7\)103 ≡ _**m**_ \(mod _**143**_\) for all _**m**_ in the range \[0..._**143**_\)
+* \(_**m**\_7\)103 ≡_ **m** _\(mod_ **143**_\) for all_ **m** _in the range \[0..._**143**\_\)
 
 In the real world, typically the RSA modulus _**n**_ and the private exponent _**d**_ are 3072-bit or 4096-bit integers and the public exponent _**e**_ is 65537.
 

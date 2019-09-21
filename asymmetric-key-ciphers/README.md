@@ -33,7 +33,7 @@ To overcome the above limitations and to allow encrypting messages of any size, 
 
 This is how a large document or file can be **encrypted** by combining **public-key cryptography** and **symmetric crypto algorithm**:
 
-![](../.gitbook/assets/hybrid-encryption%20%281%29.png)
+![](../.gitbook/assets/hybrid-encryption-1.png)
 
 In the above diagram the encrypted symmetric key is known as **KEM block** \(encapsulated key, with public key encryption\) and the encrypted data file is known as **DEM block** \(encapsulated data, with symmetric encryption\). The encrypted message consists of these two blocks together \(encapsulated key + encapsulated data\).
 

@@ -19,7 +19,7 @@ Typically modern OS CSPRNG APIs combine the constantly collected **entropy** fro
 
 Hardware random generators, known as **true random number generators \(TRNG\)**, typically capture physical processes or phenomenа, such as the visible spectrum of the light, the thermal noise from the environment, the atmosphere noise, etc. The randomness from the physical environment is collected through specialized sensors, then amplified and processed by the device and finally transmitted to the computer through USB, PCI Express or other standard interface.
 
-Modern **microprocessors** \(CPU\) ****provide a built-in hardware random generator, accessible through a special **CPU instruction** [`RdRand`](https://en.wikipedia.org/wiki/RdRand), which return a random integer into one of the CPU registers.
+Modern **microprocessors** \(CPU\) **\*\*provide a built-in hardware random generator, accessible through a special** CPU instruction\*\* [`RdRand`](https://en.wikipedia.org/wiki/RdRand), which return a random integer into one of the CPU registers.
 
 Most cryptographic applications today do not require a hardware random generator, because the entropy in the operating system is secure enough for general cryptographic purposes. Using a **TRNG** is needed for systems with higher security requirements, such as banking and finance applications, certification authorities and high volume payment processors.
 

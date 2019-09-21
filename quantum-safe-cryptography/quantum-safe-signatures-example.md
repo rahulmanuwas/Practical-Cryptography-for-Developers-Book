@@ -1,6 +1,6 @@
 # Quantum-Safe Signatures - Example
 
-In this example, we shall demonstrate the ****[**SPHINCS+** signature library](https://github.com/sphincs/sphincsplus). It implements **hash-based signatures**, which are designed to be **quantum-safe**. Note that the SPHINCS+ signatures are still **experimental** \(as of Nov 2018\) and their security is not still indisputably proven, because they are relatively new and are still not well analysed by cryptographers.
+In this example, we shall demonstrate the **\*\*\[**SPHINCS+ **signature library\]\(**[https://github.com/sphincs/sphincsplus](https://github.com/sphincs/sphincsplus)**\). It implements** hash-based signatures**, which are designed to be** quantum-safe**. Note that the SPHINCS+ signatures are still** experimental\*\* \(as of Nov 2018\) and their security is not still indisputably proven, because they are relatively new and are still not well analysed by cryptographers.
 
 We shall demonstrate the **SPHINCS+** cryptosystem for hash-based digital signatures, more precisely two of its configurations:
 

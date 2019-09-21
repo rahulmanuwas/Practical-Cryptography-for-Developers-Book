@@ -25,7 +25,7 @@ The public key EC point {_**x**_, _**y**_} can be **compressed** to just one of 
 
 ## ECDSA Sign
 
-The ECDSA signing algorithm \([**RFC 6979**](https://tools.ietf.org/html/rfc6979#section-3.2)\) takes as input a message _**msg**_ ****+ a private key _**privKey**_ ****and produces as output a **signature**, which consists of pair of integers {_**r**_, _**s**_}. The **ECDSA signing** algorithm is based on the [**ElGamal signature scheme**](https://en.wikipedia.org/wiki/ElGamal_signature_scheme) and works as follows \(with minor simplifications\):
+The ECDSA signing algorithm \([**RFC 6979**](https://tools.ietf.org/html/rfc6979#section-3.2)\) takes as input a message _**msg**_ **\*\*+ a private key \_**privKey**\_ \*\***and produces as output a **signature**, which consists of pair of integers {_**r**_, _**s**_}. The **ECDSA signing** algorithm is based on the [**ElGamal signature scheme**](https://en.wikipedia.org/wiki/ElGamal_signature_scheme) and works as follows \(with minor simplifications\):
 
 1. Calculate the message **hash**, using a cryptographic hash function like SHA-256: _**h**_ = hash\(_**msg**_\)
 2. Generate securely a **random** number _**k**_ in the range \[1.._**n**_-1\]
@@ -67,8 +67,8 @@ How does the above sign / verify scheme work? It is not obvious, but let's play 
 The equation behind the recovering of the point _**R'**_, calculated during the **signature verification**, can be transformed by replacing the _**pubKey**_ with _**privKey**_ \* **G** as follows:
 
 _**R'**_ = \(_**h**_ \* _**s1**_\) \* **G** + \(_**r**_ \* _**s1**_\) \* _**pubKey**_ =  
- _****_ = \(_**h**_ \* _**s1**_\) \* **G** + \(_**r**_ \* _**s1**_\) \* _**privKey \***_ **G** _****_=  
- _****_ = \(_**h**_ + _**r**_ \* _**privKey**_\) _**\* s1 \***_ **G**
+_\*\*_ = \(_**h**_ \* _**s1**_\) \* **G** + \(_**r**_ \* _**s1**_\) \* _**privKey \***_ **G** _\*\*_=  
+_\*\*_ = \(_**h**_ + _**r**_ \* _**privKey**_\) _**\* s1 \***_ **G**
 
 If we take the number _**s**_ = $$k^{-1} * (h + r * privKey) \pmod n$$**,** calculated during the signing process, we can calculate _**s1**_ = $$s^{-1} \pmod n$$ like this:
 
@@ -80,7 +80,7 @@ Now, replace _**s1**_ in the point _**R'**_.
 
 _**R'**_ = \(_**h**_ + _**r**_ \* _**privKey**_\) _**\* s1 \***_ **G** =  
 = $$(h + r * privKey) * k * (h + r * privKey)^{-1} \pmod n$$ _**\***_ **G** =  
- _****_ = **k** \* **G**
+_\*\*_ = **k** \* **G**
 
 The final step is to **compare** the **point** _**R'**_ \(decoded by the _**pubKey**_\) with the **point** _**R**_ \(encoded by the _**privKey**_\). The algorithm in fact compares only the x-coordinates of _**R'**_ and _**R**_: the integers _**r'**_ and _**r**_.
 
